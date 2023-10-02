@@ -35,22 +35,29 @@ function addBlog(event) {
   let icnextjs= '<i class="fab fa-next-js fa-xl"></i>';
   let ictypescript= '<i class="fab fa-typescript fa-xl"></i>';
   
-var iconTech= ""
+var iconnodeJs= ""
 
-if(nodeJs.checked == true){
-    iconTech += icnodejs
-}
+{if(nodeJs == true){
+    iconnodeJs += icnodejs
+} else { iconTech = "";}}
 
-if(reactJs.checked == true){
-    iconTech += icreactjs
-}
+var iconreactJs = ""
 
-if(nextJs.checked == true){
-    iconTech += icnextjs
-}
+{if(reactJs == true){
+   iconreactJs += icreactjs
+} else {iconreactJs="";}}
 
-if(typescript.checked == true){
-    iconTech += ictypescript}
+var iconnextJs = ""
+
+if(nextJs == true){
+    iconnextJs += icnextjs
+} else {iconnextJs = "";}
+
+var icontypescript = ""
+
+if(typescript == true){
+    icontypescript += ictypescript
+} else {icontypescript = "";}
  
   let blog = {
     title,
@@ -66,7 +73,10 @@ if(typescript.checked == true){
     icreactjs,
     icnextjs,
     ictypescript,
-    iconTech,
+    iconnodeJs,
+    iconreactJs,
+    iconnextJs,
+    icontypescript,
   };
 
   dataBlog.push(blog);
@@ -96,7 +106,10 @@ function renderBlog() {
             
             <p>${dataBlog[index].content}</p><br/>
             
-            ${dataBlog[index].iconTech}
+           ${dataBlog[index].iconnodeJs}
+            ${dataBlog[index].iconreactjs}
+            ${dataBlog[index].iconnextjs}
+            ${dataBlog[index].icontypescript}
             <div class="btn-group">
                 <button class="btn-edit">Edit Post</button>
                 <button class="btn-post">Delete Post</button>
